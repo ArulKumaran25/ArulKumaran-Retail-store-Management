@@ -14,7 +14,7 @@ export class SampleComponent {
     {id:5004,name:'Diary-Milk',price:40,discount:20},
     {id:5005,name:'Perfume',price:50,discount:20},
   ];
-  cart:{id:number;quantity:number;name:string;price:number;total:number }[] = [];
+  cart:{id:number;quantity:number;name:string;price:number;total:number }[]=[];
   selectedItem:any=null;
   quantity:number=1;
   totalBill:number = 0;
@@ -42,4 +42,3 @@ export class SampleComponent {
     this.totalBill=0;
   }
 }
-
