@@ -15,7 +15,7 @@ export class LoginComponent {
 
   login() {
     if (this.username === 'admin' && this.password === 'password') {
-      this.router.navigate(['/sample']); // Navigate to the retail store page
+      this.router.navigate(['/sample']); 
     } else {
       this.loginError = true;
     }
