@@ -7,14 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  username = 'ArulKumaran';
-  password = 'Arul25';
+  username = '';
+  password = '';
   loginError = false;
 
   constructor(private router: Router) {}
 
   login() {
-    // Mock login validation
     if (this.username === 'admin' && this.password === 'password') {
       this.router.navigate(['/sample']); // Navigate to the retail store page
     } else {
