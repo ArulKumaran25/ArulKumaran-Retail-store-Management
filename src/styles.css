@@ -5,16 +5,20 @@
 } */
 
 
-  body{
-    margin:0;
-    padding:0;
-    height:100vh;
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    display: flex;
     justify-content: center;
     align-items: center;
-    background:url('src\assets\background.jpg')no-repeat center center fixed;
-    background-size: cover;
-    font-family: Arial, sans-serif;   z-index: 2;
+    background: url('src/assets/logi.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover; 
+    font-family: Arial, sans-serif;
+    z-index: 2;
+    overflow: hidden;
   }
+  
 
   html{
     background-color: black;
