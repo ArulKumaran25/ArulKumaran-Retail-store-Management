@@ -26,7 +26,8 @@ export class SampleComponent {
 
   isInvalidQuantity: boolean = false;
 
-  addToCart() {
+  addToCart() { 
+
     if(this.quantity <= 0) {
       this.isInvalidQuantity = true; 
       return;
