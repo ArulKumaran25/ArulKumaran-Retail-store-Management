@@ -5,17 +5,17 @@
 } */
 
 
-
-
-
   body{
-    background-color: black;
     margin:0;
     padding:0;
     height:100vh;
     justify-content: center;
     align-items: center;
-    background:url('src\assets\background.jpg') no-repeat center center fixed;
+    background:url('src\assets\background.jpg')no-repeat center center fixed;
     background-size: cover;
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;   z-index: 2;
+  }
+
+  html{
+    background-color: black;
   }

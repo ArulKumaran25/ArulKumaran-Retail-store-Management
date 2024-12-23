@@ -1,8 +1,17 @@
 <div class="welcome-page">
-    <h1 class="app-name">My Application</h1>
+    <h1 class="app-name">Retail-Diary Store</h1>
+
+    <div class="description-container">
+        <p style="font-size:xx-large; font-weight: bold;">Welcome to Retail-Diary Stores</p>
+        <p>
+            Your Trusted Destination for Exploring a Wide Range of Premium Dairy Products
+            . From Fresh milk to Delicious cheese, Experience the Quality and Convenience like never before-designed to meet all
+             your Dairy needs.
+        </p>
+    </div>
+    
     <div class="button-container">
-      <button (click)="navigateToLogin()" class="btn">Login</button>
-      <button (click)="navigateToGuest()" class="btn">Guest</button>
+      <button [routerLink]="'/login'" class="btn"> Login </button>
+      <button [routerLink]="'/productDetails'" class="btn">Continue as Guest</button>
     </div>
   </div>
-  

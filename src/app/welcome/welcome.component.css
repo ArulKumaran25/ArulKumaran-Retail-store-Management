@@ -4,36 +4,66 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f8ff; /* Light blue background */
     text-align: center;
+    background-image: url('src\assets\dairy_products.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: white;
   }
   
   .app-name {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 2rem;
-    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   }
   
   .button-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    display: flex;
+    flex-direction: row;
   }
   
   .btn {
     padding: 0.8rem 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: white;
-    background-color: #007bff; /* Blue button */
-    border: none;
+    background-color: black; 
     border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
     cursor: pointer;
-    transition: background-color 0.3s;
+    margin-top: 33px;
   }
   
   .btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: rgba(56, 235, 2, 0.9);
+    transform: scale(1.05); 
+    color: black;
+  }
+
+  h1{
+    position: absolute;
+    top:1%;
+    place-self: center;
+  }
+  
+
+  .description-container {
+    padding: 30px;
+    font-size: 23px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 10px; 
+    margin: 20px 80px;
+  }
+  
+  .description-container:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Adds a shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   

@@ -6,16 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SampleComponent } from './sample/sample.component';
 import { LoginComponent } from './login/login.component';
-
-const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'sample', component: SampleComponent },
-];
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, SampleComponent, LoginComponent],
-  imports: [BrowserModule, RouterModule.forRoot(routes), FormsModule],
+  declarations: [AppComponent, SampleComponent, LoginComponent, ProductDetailsComponent, WelcomeComponent],
+  imports: [BrowserModule, RouterModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

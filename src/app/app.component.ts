@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Retail-store-Management';
+  selectedProduct = {
+    imageUrl: 'https://via.placeholder.com/200',
+    description: 'This is a sample product description.',
+    inStock: true
+  };
 }
