@@ -13,7 +13,7 @@ export class SampleComponent {
     { id: 5004, name: 'Ghee', price: 40, discount: 20 },
     { id: 5005, name: 'Panner', price: 50, discount: 20 },
   ];
-  cart: {
+  cart:{
     id: number;
     quantity: number;
     name: string;

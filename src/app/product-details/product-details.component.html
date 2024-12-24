@@ -2,16 +2,20 @@
   View Our Products
 </h1>
 
-
 <div class="products-container">
-  <div class="product-card" *ngFor="let product of products">
+  <div class="product-card" *ngFor="let product of visibleProducts">
     <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image" />
     <div class="product-info">
       <h3>{{ product.name }}</h3>
       <p class="description">{{ product.description }}</p>
-      <p class="stock-status" [ngClass]="{ 'in-stock': product.inStock, 'out-of-stock': !product.inStock }">
+      <p class="stock-status" [ngClass]="{'in-stock': product.inStock, 'out-of-stock': !product.inStock}">
         {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
       </p>
     </div>
   </div>
+</div>
+
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="currentPage === 0" class="pagination-button">Previous</button>
+  <button (click)="nextPage()" [disabled]="!hasNextPage()" class="pagination-button">Next</button>
 </div>
