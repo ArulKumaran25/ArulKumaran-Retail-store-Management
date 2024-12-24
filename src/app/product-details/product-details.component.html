@@ -1,21 +1,29 @@
-<h1 style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: bold; font-size: 2.5rem; margin: 20px 0; color: #ffffff;">
+<h1 style="text-align: center; font-family: 'Poppins', sans-serif; font-weight: bold; font-size: 2.5rem; margin: 20px 0; color: #ffffff; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
   View Our Products
 </h1>
 
+
 <div class="products-container">
-  <div class="product-card" *ngFor="let product of visibleProducts">
+  <div class="product-card" *ngFor="let product of displayedProducts">
     <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image" />
     <div class="product-info">
       <h3>{{ product.name }}</h3>
       <p class="description">{{ product.description }}</p>
-      <p class="stock-status" [ngClass]="{'in-stock': product.inStock, 'out-of-stock': !product.inStock}">
+      <p class="stock-status" [ngClass]="{'in-stock':product.inStock,'out-of-stock': !product.inStock}">
         {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
       </p>
+      <button 
+        class="proceed-to-buy-button"
+        [routerLink]="'/login'"
+        [queryParams]="{ message: 'Login to purchase' }">
+        Proceed to Buy
+      </button>
     </div>
   </div>
 </div>
 
+<!-- Pagination Buttons -->
 <div class="pagination">
-  <button (click)="prevPage()" [disabled]="currentPage === 0" class="pagination-button">Previous</button>
-  <button (click)="nextPage()" [disabled]="!hasNextPage()" class="pagination-button">Next</button>
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <button (click)="nextPage()" [disabled]="(currentPage * productsPerPage) >= products.length">Next</button>
 </div>
