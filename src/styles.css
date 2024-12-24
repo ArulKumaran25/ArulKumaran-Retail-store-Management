@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('src/assets/logi.jpg') no-repeat center center fixed; /* Background image */
+    background: url('src/assets/back.jpg') no-repeat center center fixed; /* Background image */
     background-size: cover; 
     font-family: Arial, sans-serif;
     z-index: 2;
