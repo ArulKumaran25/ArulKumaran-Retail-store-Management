@@ -2,11 +2,10 @@
   View Our Products
 </h1>
 
-
 <div class="products-container">
   <div class="product-card" *ngFor="let product of displayedProducts">
     <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image" />
-    <div class="product-info">
+    <div class="prod uct-info">
       <h3>{{ product.name }}</h3>
       <p class="description">{{ product.description }}</p>
       <p class="stock-status" [ngClass]="{'in-stock':product.inStock,'out-of-stock': !product.inStock}">
@@ -15,14 +14,13 @@
       <button 
         class="proceed-to-buy-button"
         [routerLink]="'/login'"
-        [queryParams]="{ message: 'Login to purchase' }">
+        [queryParams]="{ message:'Login to purchase'}">
         Proceed to Buy
       </button>
     </div>
   </div>
 </div>
 
-<!-- Pagination Buttons -->
 <div class="pagination">
   <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
   <button (click)="nextPage()" [disabled]="(currentPage * productsPerPage) >= products.length">Next</button>

@@ -53,14 +53,12 @@ export class ProductListComponent {
     const startIndex = (this.currentPage - 1) * this.productsPerPage;
     return this.products.slice(startIndex, startIndex + this.productsPerPage);
   }
-
   // Go to the next page
-  nextPage() {
-    if ((this.currentPage * this.productsPerPage) < this.products.length) {
+  nextPage(){
+    if((this.currentPage * this.productsPerPage) < this.products.length) {
       this.currentPage++;
     }
   }
-
   // Go to the previous page
   prevPage() {
     if (this.currentPage > 1) {

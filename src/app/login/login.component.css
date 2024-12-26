@@ -8,9 +8,6 @@ body {
   background-size: cover; 
   
 }
-
-
-
 .login-container {
   max-width: 800px;
   width: auto;
@@ -26,19 +23,18 @@ body {
 
 @keyframes bounceIn {
   0% {
-    transform: scale(0.8); /* Smaller */
-    opacity: 0; /* Invisible */
+    transform: scale(0.8); 
+    opacity: 0;
   }
   50% {
-    transform: scale(1.1); /* Overshoot */
-    opacity: 1; /* Visible */
+    transform: scale(1.1); 
+    opacity: 1; 
   }
   100% {
     transform: scale(1);
-    opacity: 1; /* Normal */
+    opacity: 1;
   }
 }
-
 
 
 h2 {
