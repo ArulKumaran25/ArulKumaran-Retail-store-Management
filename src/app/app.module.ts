@@ -9,9 +9,10 @@ import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product-details/product-details.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BillComponent } from './bill/bill.component';
 
 @NgModule({
-  declarations: [AppComponent, SampleComponent, LoginComponent, ProductListComponent, WelcomeComponent],
+  declarations: [AppComponent, SampleComponent, LoginComponent, ProductListComponent, WelcomeComponent, BillComponent],
   imports: [BrowserModule, RouterModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
