@@ -1,57 +1,72 @@
 <body>
-  <h2 style="font-size: 35px; color: white; margin: 40px;">Retail-Store Bill Generator (Diary Products)</h2>
-<div class="container">
- 
+  <h2 style="font-size: 35px; color: white; margin: 40px;">
+    Retail-Store Bill Generator (Diary Products)
+  </h2>
+  <div class="container">
 
-  <div class="form-group">
-    <label for="item">Select Item</label>
-    <select id="item" class="form-control" [(ngModel)]="selectedItem">
-      <option value="null" disabled option>Select the products</option>
-      <option *ngFor="let item of items " [ngValue]="item">
-        {{item.name}}-Rs.{{item.price}} {{ item.discount ? '(20% Off)' : '' }}
-      </option>
-    </select>
-  </div>
+    <div class="form-group">
+      <label for="item">Select Item</label>
+      <select id="item" class="form-control" [(ngModel)]="selectedItem">
+        <option value="null" disabled option>Select the products</option>
+        <option *ngFor="let item of items " [ngValue]="item">
+          {{item.name}}-Rs.{{item.price}} {{ item.discount ? '(20% Off)' : '' }}
+        </option>
+      </select>
+    </div>
 
-  <div class="form-group">
-    <label for="quantity">Quantity</label>
-    <input
-      id="quantity"
-      type="number"
-      class="form-control"
-      [(ngModel)]="quantity"
-      min="1"
-    />
-
-    <span *ngIf="isInvalidQuantity" style="color: red; font-size: 14px;">
-       Please enter a valid quantity
-    </span>
-  </div>
+    
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input
+        id="quantity"
+        type="number"
+        class="form-control"
+        [(ngModel)]="quantity"
+        min="1"
+      />
   
-  <button style="margin-left: 350px;" class="btn btn-primary"(click)="addToCart()">Add to cart</button>
-  <h3 style="font-size: 28px;">Cart Items Added</h3>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Item ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of cart">
-        <td>{{item.id}}</td>
-        <td>{{item.name}}</td>
-        <td>Rs.{{item.price}}</td>
-        <td>{{item.quantity}}</td>
-        <td>Rs.{{item.total.toFixed(2)}}</td>
-      </tr>
-    </tbody>
-  </table>
+      <span *ngIf="isInvalidQuantity" style="color: red; font-size: 14px;">
+         Please enter a valid quantity
+      </span>
+    </div>
 
-  <h3 style="font-size: 25px;">Total Bill Amount : Rs.{{ totalBill.toFixed(2) }}</h3>
-  <button style ="justify-content: center; display: flex; margin-left: 350px;"class="btn btn-danger"(click)="resetCart()">Reset Cart</button>
-</div>
+    <button style="margin-left: 350px;" class="btn btn-primary" (click)="addToCart()">Add to cart</button>
+    <h3 style="font-size: 28px;">Cart Items Added</h3>
+
+    <!-- Cart Table -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Item ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cart">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>Rs.{{item.price}}</td>
+          <td>{{item.quantity}}</td>
+          <td>Rs.{{item.total.toFixed(2)}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size: 25px;">Total Bill Amount: Rs.{{ totalBill.toFixed(2) }}</h3>
+    <button style="justify-content: center; display: flex; margin-left: 350px;" class="btn btn-danger" (click)="resetCart()">Reset Cart</button>
+
+    <!-- View Bill Button -->
+    <button
+      style="justify-content: center; display: flex; margin-left: 350px; margin-top: 20px;"
+      class="btn btn-success"
+      [routerLink]="['/bill']"
+      [queryParams]="{ cart: cart, totalBill: totalBill }"
+      [disabled]="cart.length === 0"
+    >
+      View Bill
+    </button>
+  </div>
 </body>
