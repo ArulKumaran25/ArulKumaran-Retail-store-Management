@@ -1,1 +1,27 @@
-<p>bill works!</p>
+<div class="container">
+    <h2 style="font-size: 35px; color: black; margin: 40px;">Bill Details</h2>
+  
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Item ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cart">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>Rs.{{item.price}}</td>
+          <td>{{item.quantity}}</td>
+          <td>Rs.{{item.total.toFixed(2)}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <h3 style="font-size: 25px;">Total Bill Amount: Rs.{{ totalBill.toFixed(2) }}</h3>
+  </div>
+  
