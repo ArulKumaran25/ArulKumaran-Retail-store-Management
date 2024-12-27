@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from '../shared/cart.service'; // Import the service
 
 @Component({
   selector: 'app-sample',
@@ -11,9 +12,9 @@ export class SampleComponent {
     { id: 5002, name: 'Milk', price: 25 },
     { id: 5003, name: 'Butter', price: 30 },
     { id: 5004, name: 'Ghee', price: 40, discount: 20 },
-    { id: 5005, name: 'Panner', price: 50, discount: 20 },
+    { id: 5005, name: 'Paneer', price: 50, discount: 20 },
   ];
-  cart:{
+  cart: {
     id: number;
     quantity: number;
     name: string;
@@ -26,16 +27,17 @@ export class SampleComponent {
 
   isInvalidQuantity: boolean = false;
 
-  addToCart() { 
+  constructor(private cartService: CartService) {} // Inject the service
 
-    if(this.quantity <= 0) {
-      this.isInvalidQuantity = true; 
+  addToCart() {
+    if (this.quantity <= 0) {
+      this.isInvalidQuantity = true;
       return;
     } else {
       this.isInvalidQuantity = false;
     }
 
-    if(this.selectedItem && this.quantity > 0) {
+    if (this.selectedItem && this.quantity > 0) {
       const discount = this.selectedItem.discount || 0;
       const priceAfterDiscount =
         this.selectedItem.price * (1 - discount / 100);
@@ -57,5 +59,11 @@ export class SampleComponent {
   resetCart() {
     this.cart = [];
     this.totalBill = 0;
+  }
+
+  navigateToBill() {
+    // Set the cart and total bill in the service
+    this.cartService.setCart(this.cart);
+    this.cartService.setTotalBill(this.totalBill);
   }
 }
