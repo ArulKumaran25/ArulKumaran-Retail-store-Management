@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../shared/cart.service'; // Import the service
 
 @Component({
   selector: 'app-bill',
   templateUrl: './bill.component.html',
-  styleUrls: ['./bill.component.css']
+  styleUrls: ['./bill.component.css'],
 })
 export class BillComponent implements OnInit {
   cart: any[] = [];
   totalBill: number = 0;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private cartService: CartService) {} 
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      this.cart = JSON.parse(params['cart'] || '[]');
-      this.totalBill = parseFloat(params['totalBill'] || '0');
-    });
+    this.cart = this.cartService.getCart();
+    this.totalBill = this.cartService.getTotalBill();
   }
 }
